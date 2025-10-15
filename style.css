@@ -598,8 +598,12 @@ nav {
    RESPONSIVE DESIGN CORRIGIDO
    ================================= */
 @media (max-width: 768px) {
+    /* reduzir espaço extra no topo em mobile para aproximar o hero do topo */
+    body {
+        padding-top: 72px; /* ajusta para a altura do header no mobile */
+    }
     .header {
-        height: 70px;
+        height: 80px;
         padding: 0.5rem 0;
     }
 
@@ -669,12 +673,13 @@ nav {
     }
 
     .hero {
-        padding: 80px 20px;
+        /* reduzir a altura vertical do hero para que ele suba na tela */
+        padding: 48px 18px;
         text-align: center;
     }
 
     .hero h1 { 
-        font-size: 2rem; 
+        font-size: 1.9rem; 
     }
     
     .hero p { 
