@@ -6,7 +6,18 @@
     <title>Click do Saber - Plataforma Educacional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-   
+    <!-- Adicionado: estilos para alternar banners mobile/desktop -->
+    <style>
+      /* mobile banners hidden por padrão; mostrados apenas em telas pequenas */
+      .hero-image.mobile { display: none; }
+
+      @media (max-width: 768px) {
+        /* esconde banners "desktop" e mostra os específicos para mobile */
+        .hero-image { display: none; }
+        .hero-image.mobile { display: block; width: 100%; height: auto; object-fit: cover; }
+        .hero .hero-slideshow { width: 100%; max-width: 420px; margin: 0 auto; }
+      }
+    </style>
 </head>
 <body>
     <header class="header" id="header">
@@ -21,7 +32,7 @@
                     <li><a href="#features">Recursos</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#contact">Contato</a></li>
-                    <li class="nav-item-social"><a href="#" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+                    <li class="nav-item-social"><a href="https://www.instagram.com/ensinoclick?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <span class="bar"></span>
@@ -32,15 +43,28 @@
         </div>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>O primeiro acompanhamento com relatórios e personalização para cada aluno.</h1>
-            <br><p> <span>Flexibilidade</span>, <span>qualidade</span> e <span>acessibilidade</span>.</p>
-            <a href="https://wa.me/5575999271695?text=Ol%C3%A1%2C%20queria%20conhecer%20mais%20sobre%20o%20acompanhamento%20de%20voc%C3%AAs." class="cta-button">
-                <i class=""></i> Quero Matricular Meu Filho
-            </a>
-        </div>
-    </section>
+    <!-- Substitua a seção hero atual por esta: -->
+<section class="hero" id="home">
+  <div class="hero-banner">
+    <div class="hero-slideshow">
+      <img src="1.png" alt="Banner 1" class="hero-image active">
+      <img src="2.png" alt="Banner 2" class="hero-image">
+      <img src="3.png" alt="Banner 3" class="hero-image">
+
+      <!-- Adicionado: banners otimizados para mobile (1080x1080) -->
+      <img src="mobile.png"   alt="Banner Mobile 1"  class="hero-image mobile">
+      <img src="mobile2.png"  alt="Banner Mobile 2"  class="hero-image mobile">
+      <img src="mobile3.png"  alt="Banner Mobile 3"  class="hero-image mobile">
+    </div>
+    <div class="hero-content">
+      <a href="https://wa.me/5575999271695?text=Ol%C3%A1%2C%20queria%20conhecer%20mais%20sobre%20o%20acompanhamento%20de%20voc%C3%AAs." 
+         class="cta-button" target="_blank">
+        Quero Matricular Meu Filho
+      </a>
+    </div>
+  </div>
+</section>
+
 
     <section class="features" id="about" style="padding-top:40px;">
         <div class="features-container">
@@ -49,7 +73,7 @@
                 <p style="font-size:1.15rem; line-height:1.7;">
                     A Click do Saber nasceu a partir da ideia de tornar a educação mais próxima, flexível e acessível para todos. 
                     Somos uma plataforma 100% digital com o objetivo de conectar alunos e professores de forma prática e segura, 
-                    trazendo relatórios de acompanhamento. Seu filho não vai apenas assisstir aulas, ele será compreendido e direcionado a evoluir de forma constante
+                    trazendo relatórios de acompanhamento. Seu filho não vai apenas assistir aulas, ele será compreendido e direcionado a evoluir de forma constante
                 </p>
             </div>
         </div>
@@ -128,7 +152,7 @@
         </div>
     </section>
 
-    <footer class="footer"> <div class="footer-container"> <div class="footer-content"> <div class="footer-section"> <h3>Click do Saber</h3> <p>Transformando a educação através da tecnologia e personalização. Conectamos alunos e professores para uma experiência de aprendizado única.</p> <div class="social-links"> <a href="#" class="social-link"> <i class="fab fa-instagram"></i> </a> <a href="#" class="social-link"> <i class="fab fa-linkedin"></i> </a> <a href="#" class="social-link"> <i class="fab fa-whatsapp"></i> </a> <a href="#" class="social-link"> <i class="fab fa-youtube"></i> </a> </div> </div> <div class="footer-section"> <h4>Serviços</h4> <ul class="footer-links"> <li><a href="#">Aulas Particulares</a></li> <li><a href="#">Preparação para ENEM</a></li> <li><a href="#">Reforço Escolar</a></li><li><a href="#">Relatório de acompanhamento</a></li> <li><a href="#">Sessões com Psicopedagoga</a></li> <li><a href="#">Aulas Online</a></li> </ul> </div> <div class="footer-section"> <h4>Disciplinas</h4> <ul class="footer-links"> <li><a href="#">Matemática</a></li> <li><a href="#">Física</a></li> <li><a href="#">Química</a></li> <li><a href="#">Portugês</a></li> <li><a href="#">Geografia</a></li> <li><a href="#">História</a></li> <li><a href="#">Biologia</a></li> <li><a href="#">Inglês</a></li> <li><a href="#">Espanhol</a></li> <li><a href="#">Filosofia</a></li> </ul> </div> <div class="footer-section"> <h4>Contato</h4> <div class="contact-info"> <div class="contact-item"> <i class="fas fa-phone"></i> <span>(71) 99999-9999</span> </div> <div class="contact-item"> <i class="fas fa-envelope"></i> <span>contato@clickdosaber.com</span> </div> <div class="contact-item"> <i class="fas fa-map-marker-alt"></i> <span>Salvador, BA - Brasil</span> </div> </div> </div> </div> <div class="footer-bottom"> <div class="footer-bottom-content"> <p>&copy; 2025 Click do Saber. Todos os direitos reservados.</p> <div class="footer-bottom-links"> <a href="#">Política de Privacidade</a> <a href="#">Termos de Uso</a> <a href="#">Cookies</a> </div> </div> </div> </div> </footer>
+    <footer class="footer"> <div class="footer-container"> <div class="footer-content"> <div class="footer-section"> <h3>Click do Saber</h3> <p>Transformando a educação através da tecnologia e personalização. Conectamos alunos e professores para uma experiência de aprendizado única.</p> <div class="social-links"> <a href="https://www.instagram.com/ensinoclick?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link" target="_blank" rel="noopener"> <i class="fab fa-instagram"></i> </a> <a href="#" class="social-link"> <i class="fab fa-linkedin"></i> </a> <a href="#" class="social-link"> <i class="fab fa-whatsapp"></i> </a> <a href="#" class="social-link"> <i class="fab fa-youtube"></i> </a> </div> </div> <div class="footer-section"> <h4>Serviços</h4> <ul class="footer-links"> <li><a href="#">Aulas Particulares</a></li> <li><a href="#">Preparação para ENEM</a></li> <li><a href="#">Reforço Escolar</a></li><li><a href="#">Relatório de acompanhamento</a></li> <li><a href="#">Sessões com Psicopedagoga</a></li> <li><a href="#">Aulas Online</a></li> </ul> </div> <div class="footer-section"> <h4>Disciplinas</h4> <ul class="footer-links"> <li><a href="#">Matemática</a></li> <li><a href="#">Física</a></li> <li><a href="#">Química</a></li> <li><a href="#">Portugês</a></li> <li><a href="#">Geografia</a></li> <li><a href="#">História</a></li> <li><a href="#">Biologia</a></li> <li><a href="#">Inglês</a></li> <li><a href="#">Espanhol</a></li> <li><a href="#">Filosofia</a></li> </ul> </div> <div class="footer-section"> <h4>Contato</h4> <div class="contact-info"> <div class="contact-item"> <i class="fas fa-phone"></i> <span>(71) 99999-9999</span> </div> <div class="contact-item"> <i class="fas fa-envelope"></i> <span>contato@clickdosaber.com</span> </div> <div class="contact-item"> <i class="fas fa-map-marker-alt"></i> <span>Salvador, BA - Brasil</span> </div> </div> </div> </div> <div class="footer-bottom"> <div class="footer-bottom-content"> <p>&copy; 2025 Click do Saber. Todos os direitos reservados.</p> <div class="footer-bottom-links"> <a href="#">Política de Privacidade</a> <a href="#">Termos de Uso</a> <a href="#">Cookies</a> </div> </div> </div> </div> </footer>
 
     <script>
         // ===== MENU HAMBURGUER SIMPLES (Nova Implementação) =====
@@ -259,7 +283,59 @@
 
             lastScrollY = currentScrollY;
         });
+
+        // ===== BANNER ROTATIVO (Atualizado para suportar imagens mobile) =====
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = Array.from(document.querySelectorAll(".hero-image"));
+
+  function isVisible(el) {
+    return getComputedStyle(el).display !== 'none';
+  }
+
+  function findInitialIndex() {
+    // tenta encontrar um slide marcado como active e visível
+    for (let i = 0; i < slides.length; i++) {
+      if (slides[i].classList.contains("active") && isVisible(slides[i])) return i;
+    }
+    // senão, retorna o primeiro visível
+    for (let i = 0; i < slides.length; i++) {
+      if (isVisible(slides[i])) return i;
+    }
+    return 0;
+  }
+
+  let currentSlide = findInitialIndex();
+
+  // garante que apenas o slide atual esteja com a classe active
+  slides.forEach((s, idx) => {
+    if (idx === currentSlide) s.classList.add("active");
+    else s.classList.remove("active");
+  });
+
+  function showNextSlide() {
+    // remove active do atual
+    slides[currentSlide].classList.remove("active");
+    // encontra o próximo slide visível
+    let next = currentSlide;
+    do {
+      next = (next + 1) % slides.length;
+    } while (!isVisible(slides[next]) && next !== currentSlide);
+    currentSlide = next;
+    slides[currentSlide].classList.add("active");
+  }
+
+  setInterval(showNextSlide, 5000); // muda a cada 5 segundos
+
+  // reavalia visibilidade ao redimensionar (garante slide ativo válido)
+  window.addEventListener('resize', () => {
+    currentSlide = findInitialIndex();
+    slides.forEach((s, idx) => {
+      if (idx === currentSlide) s.classList.add("active");
+      else s.classList.remove("active");
+    });
+  });
+});
+
     </script>
 </body>
 </html>
-// ...existing code...

@@ -178,75 +178,85 @@ nav {
 }
 
 /* =================================
-   HERO SECTION
+   HERO SECTION ATUALIZADA
    ================================= */
 .hero {
-    background: linear-gradient(135deg, var(--verde) 0%, #0f6b5a 100%);
-    color: var(--branco);
-    padding: 120px 60px;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(111, 79, 227, 0.1) 0%, transparent 50%);
-    pointer-events: none;
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slideshow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-image.active {
+  opacity: 1;
 }
 
 .hero-content {
-    max-width: 600px;
-    position: relative;
-    z-index: 2;
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 2;
 }
 
-.hero h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--cinza-escuro);
 }
 
-.hero p {
-    font-size: 1.4rem;
-    margin-bottom: 30px;
-    line-height: 1.5;
-    max-width: 500px;
-}
-
-.hero span {
-    font-weight: 700;
-    background-color: rgba(111, 79, 227, 0.2);
-    padding: 2px 6px;
-    border-radius: 4px;
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: var(--cinza-escuro);
 }
 
 .cta-button {
-    background: var(--roxo-principal);
-    color: var(--branco);
-    border: none;
-    padding: 15px 30px;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    margin-top: 30px;
+  display: inline-block;
+  background-color: var(--verde);
+  color: var(--branco);
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .cta-button:hover {
-    background: var(--roxo-escuro);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(111, 79, 227, 0.4);
+  background-color: var(--roxo-escuro);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 /* =================================
@@ -672,23 +682,22 @@ nav {
         grid-template-columns: 1fr;
     }
 
-    .hero {
-        /* reduzir a altura vertical do hero para que ele suba na tela */
-        padding: 48px 18px;
+    /* RESPONSIVIDADE PARA O NOVO BANNER */
+    .hero-banner {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .hero-content {
+        bottom: 15%;
+        right: 5%;
+        left: 5%;
         text-align: center;
     }
-
-    .hero h1 { 
-        font-size: 1.9rem; 
-    }
     
-    .hero p { 
-        font-size: 1.2rem; 
-    }
-    
-    .cta-button { 
-        padding: 12px 25px; 
-        font-size: 1rem; 
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
     }
 
     .footer-content {
@@ -713,6 +722,17 @@ nav {
     .footer-bottom-links {
         flex-direction: column;
         gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .hero-content {
+        bottom: 10%;
     }
 }
 
