@@ -57,10 +57,7 @@
       <img src="mobile3.png"  alt="Banner Mobile 3"  class="hero-image mobile">
     </div>
     <div class="hero-content">
-      <a href="https://wa.me/5575999271695?text=Ol%C3%A1%2C%20queria%20conhecer%20mais%20sobre%20o%20acompanhamento%20de%20voc%C3%AAs." 
-         class="cta-button" target="_blank">
-        Quero Matricular Meu Filho
-      </a>
+      <!-- botão removido conforme solicitado -->
     </div>
   </div>
 </section>
@@ -336,6 +333,38 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+    // Ajusta dinamicamente a margin-top da .hero para colar o banner na base do header no mobile
+    (function() {
+      function adjustHeroBelowHeader() {
+        const header = document.getElementById('header');
+        const hero = document.querySelector('.hero');
+        if (!header || !hero) return;
+
+        const apply = () => {
+          if (window.innerWidth <= 768) {
+            // usa a altura real do header (inclui padding/linha/altura do logo)
+            hero.style.marginTop = header.getBoundingClientRect().height + 'px';
+          } else {
+            hero.style.marginTop = '0';
+          }
+        };
+
+        // ajustar ao carregar e ao redimensionar
+        apply();
+        window.addEventListener('resize', apply);
+
+        // opcional: observar mudanças na altura do header (ex: quando menu abre)
+        const ro = new ResizeObserver(apply);
+        ro.observe(header);
+      }
+
+      // Executa após DOM pronto
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', adjustHeroBelowHeader);
+      } else {
+        adjustHeroBelowHeader();
+      }
+    })();
     </script>
 </body>
 </html>
