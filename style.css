@@ -184,16 +184,20 @@ nav {
   position: relative;
   width: 100%;
   height: 70vh;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+  background: var(--branco);
 }
 
 .hero-banner {
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 2;
+  background: var(--branco);
 }
 
 .hero-slideshow {
@@ -265,6 +269,8 @@ nav {
 .features {
     padding: 100px 0;
     background: var(--branco);
+    position: relative;
+    z-index: 0;
 }
 
 .features-container {
@@ -277,7 +283,7 @@ nav {
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .section-title .highlight {
@@ -612,6 +618,7 @@ nav {
        Usaremos margin-top na .hero para posicionar o banner imediatamente abaixo do header. */
     body {
         padding-top: 0;
+        background: var(--branco); /* muda o fundo para branco no mobile para evitar cinza */
     }
 
     .header {
@@ -633,11 +640,20 @@ nav {
         height: 55vh;         /* reduz um pouco a altura para ajustar visual */
         min-height: 300px;
         transform: translateY(-18px); /* sobe o banner; ajuste este valor se quiser mais/menos */
+        position: relative;
+        z-index: 3;
+        overflow: visible;
+        background: var(--branco);
+        margin-bottom: -50px; /* estende o banner para cobrir espaços */
     }
     
     .hero-banner {
         margin-top: 0;
         height: 100%;
+        position: relative;
+        z-index: 2;
+        background: var(--branco);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* sombra para dar profundidade */
     }
 
     .logo-container {
@@ -705,10 +721,22 @@ nav {
         grid-template-columns: 1fr;
     }
 
+    /* Garante que a seção features não mostre fundo cinza atrás do banner */
+    .features {
+        position: relative;
+        z-index: 1;
+        margin-top: -30px; /* sobrepõe ligeiramente o banner */
+        padding-top: 130px; /* ajusta o padding para compensar */
+    }
+
     /* RESPONSIVIDADE PARA O NOVO BANNER */
     .hero-banner {
         height: 60vh;
         min-height: 400px;
+        position: relative;
+        z-index: 2;
+        background: var(--branco);
+        overflow: visible;
     }
     
     .hero-content {
@@ -784,15 +812,30 @@ nav {
 @media (max-width: 480px) {
     .hero {
         transform: translateY(-24px); /* sobe um pouco mais no celular pequeno */
+        position: relative;
+        z-index: 3;
+        overflow: visible;
+        background: var(--branco);
+        margin-bottom: -50px; /* estende o banner para cobrir espaços */
     }
     
     .hero-banner {
         height: 48vh;
         min-height: 300px;
+        position: relative;
+        z-index: 2;
+        background: var(--branco);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     
     .hero-content {
         bottom: 10%;
+    }
+
+    /* Garante que a seção features não mostre fundo cinza atrás do banner */
+    .features {
+        margin-top: -30px;
+        padding-top: 130px;
     }
 }
 
