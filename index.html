@@ -2,369 +2,158 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <title>Click do Saber | Acompanhamento Escolar Online</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click do Saber - Plataforma Educacional</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <!-- Adicionado: estilos para alternar banners mobile/desktop -->
-    <style>
-      /* mobile banners hidden por padrão; mostrados apenas em telas pequenas */
-      .hero-image.mobile { display: none; }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-      @media (max-width: 768px) {
-        /* esconde banners "desktop" e mostra os específicos para mobile */
-        .hero-image { display: none; }
-        .hero-image.mobile { display: block; width: 100%; height: auto; object-fit: cover; }
-        .hero .hero-slideshow { width: 100%; max-width: 420px; margin: 0 auto; }
-      }
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .bg-primary { background:#6f4fe3 }
+        .text-primary { color:#6f4fe3 }
+        .bg-secondary { background:#00c8a8 }
+        .bg-dark { background:#102e59 }
+        .bg-light { background:#f4f6fb }
+
+        @keyframes float {
+            0% { transform: translateY(0) }
+            50% { transform: translateY(-8px) }
+            100% { transform: translateY(0) }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite }
     </style>
 </head>
-<body>
-    <header class="header" id="header">
-        <div class="header-container">
-            <div class="logo-container">
-                <img src="LOGO-2 (1).png" alt="Click do Saber" class="logo">
-            </div>
-            <nav>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#home" class="active">Início</a></li>
-                    <li><a href="#about">Quem Somos</a></li>
-                    <li><a href="#features">Recursos</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                    <li class="nav-item-social"><a href="https://www.instagram.com/ensinoclick?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Substitua a seção hero atual por esta: -->
-<section class="hero" id="home">
-  <div class="hero-banner">
-    <div class="hero-slideshow">
-      <img src="1.png" alt="Banner 1" class="hero-image active">
-      <img src="2.png" alt="Banner 2" class="hero-image">
-      <img src="3.png" alt="Banner 3" class="hero-image">
+<body class="bg-white text-gray-800">
 
-      <!-- Adicionado: banners otimizados para mobile (1080x1080) -->
-      <img src="mobile.png"   alt="Banner Mobile 1"  class="hero-image mobile">
-      <img src="mobile2.png"  alt="Banner Mobile 2"  class="hero-image mobile">
-      <img src="mobile3.png"  alt="Banner Mobile 3"  class="hero-image mobile">
+<header class="sticky top-0 bg-white border-b z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <img src="LOGO-2 (1).png" class="h-14" alt="Click do Saber">
+
+        <a href="https://wa.me/5575999271695" 
+           class="bg-secondary text-white px-6 py-2 rounded-full font-bold shadow hover:scale-105 transition">
+            Falar no WhatsApp
+        </a>
     </div>
-    <div class="hero-content">
-      <!-- botão removido conforme solicitado -->
-    </div>
-  </div>
-</section>
+</header>
 
+<!-- HERO -->
+<section class="bg-light py-16 px-6">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
 
-    <section class="features" id="about" style="padding-top:40px;">
-        <div class="features-container">
-            <h2 class="section-title" style="margin-bottom: 20px;">QUEM <span class="highlight">SOMOS</span></h2>
-            <div style="max-width:900px; margin: 0 auto; text-align: center; color: #444; padding: 10px 20px;">
-                <p style="font-size:1.15rem; line-height:1.7;">
-                    A Click do Saber nasceu a partir da ideia de tornar a educação mais próxima, flexível e acessível para todos. 
-                    Somos uma plataforma 100% digital com o objetivo de conectar alunos e professores de forma prática e segura, 
-                    trazendo relatórios de acompanhamento. Seu filho não vai apenas assistir aulas, ele será compreendido e direcionado a evoluir de forma constante
-                </p>
-            </div>
-        </div>
-    </section>
+        <div>
+            <span class="inline-block bg-primary text-white text-xs font-bold px-4 py-2 rounded-full mb-6 animate-float">
+                Acompanhamento Escolar Online
+            </span>
 
-    <section class="features" id="features">
-        <div class="features-container">
-            <h2 class="section-title">NOSSOS <span class="highlight">RECURSOS</span></h2>
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                    <h3>Professores Qualificados</h3>
-                    <p>Educadores experientes e dedicados para garantir o melhor aprendizado.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon"><i class="fas fa-laptop"></i></div>
-                    <h3>Aulas ao vivo</h3>
-                    <p>Todas as aulas são realizadas ao vivo, com um simples agendamento</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Conteúdo Personalizado</h3>
-                    <p>Material adaptado às necessidades específicas de cada aluno.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-dark leading-tight">
+                Seu filho pode estar com dificuldades na escola<br>
+                <span class="text-primary">e você só vai perceber quando a nota cair.</span>
+            </h1>
 
-    <section class="services-preview" id="services">
-        <div class="services-container">
-            <h2 class="section-title">NOSSOS SERVIÇOS <span class="highlight"></span></h2>
-            <div class="services-grid">
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon"><i class="fas fa-user-md"></i></div>
-                    <h3>Acompanhamento com Psicopedagoga</h3>
-                    <p>Sessões individuais com psicopedagoga auxiliando e direcionando o estudante.</p>
-                </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
-                    <h3>Relatórios Individuais</h3>
-                    <p>Relatórios pós-aula sinalizando pontos positivos e pontos a reforçar no aprendizado.</p>
-                </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon"><i class="fas fa-book-open"></i></div>
-                    <h3>Aulas Particulares</h3>
-                    <p>Atendimento individualizado para máximo aproveitamento.</p>
-                </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon"><i class="fas fa-university"></i></div>
-                    <h3>Preparação para Vestibular</h3>
-                    <p>Foco total no seu sucesso nos principais vestibulares.</p>
-                </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
-                    <h3>Reforço Escolar</h3>
-                    <p>Acompanhamento contínuo para melhor desempenho escolar.</p>
-                </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon"><i class="fas fa-globe"></i></div>
-                    <h3>Aulas de Idiomas</h3>
-                    <p>Inglês e outros idiomas com metodologia eficiente.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <p class="mt-6 text-lg text-gray-600">
+                A Click do Saber acompanha o aluno de perto, identifica onde ele trava
+                e mostra aos pais exatamente como ajudar — sem achismos.
+            </p>
 
-    <!-- Seção "Conheça nossos professores" removida conforme solicitado -->
+            <ul class="mt-8 space-y-4">
+                <li class="flex gap-3 items-start">
+                    <span class="text-red-500 font-bold">✕</span>
+                    <p>Desatenção, notas baixas ou falta de interesse</p>
+                </li>
+                <li class="flex gap-3 items-start">
+                    <span class="text-red-500 font-bold">✕</span>
+                    <p>Boletins que não explicam o real problema</p>
+                </li>
+                <li class="flex gap-3 items-start">
+                    <span class="text-red-500 font-bold">✕</span>
+                    <p>Crianças com TEA ou TDAH sem suporte adequado</p>
+                </li>
+            </ul>
 
-    <section class="cta-section" id="contact">
-        <div class="cta-container">
-            <h2>Pronto para Transformar seu Aprendizado?</h2>
-            <p>Junte-se a nós e descubra como unir tecnologia e conhecimento para evoluir no seu aprendizado.</p>
-            <a href="https://wa.me/5575999271695?text=Ol%C3%A1%2C%20queria%20conhecer%20mais%20sobre%20o%20acompanhamento%20de%20voc%C3%AAs." target="_blank" class="cta-button">
-                <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
+            <a href="https://wa.me/5575999271695"
+               class="mt-10 inline-block bg-secondary text-white text-xl px-10 py-5 rounded-xl font-bold shadow-lg hover:scale-105 transition">
+                Quero entender o que está acontecendo
             </a>
         </div>
-    </section>
 
-    <footer class="footer"> <div class="footer-container"> <div class="footer-content"> <div class="footer-section"> <h3>Click do Saber</h3> <p>Transformando a educação através da tecnologia e personalização. Conectamos alunos e professores para uma experiência de aprendizado única.</p> <div class="social-links"> <a href="https://www.instagram.com/ensinoclick?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link" target="_blank" rel="noopener"> <i class="fab fa-instagram"></i> </a> <a href="#" class="social-link"> <i class="fab fa-linkedin"></i> </a> <a href="#" class="social-link"> <i class="fab fa-whatsapp"></i> </a> <a href="#" class="social-link"> <i class="fab fa-youtube"></i> </a> </div> </div> <div class="footer-section"> <h4>Serviços</h4> <ul class="footer-links"> <li><a href="#">Aulas Particulares</a></li> <li><a href="#">Preparação para ENEM</a></li> <li><a href="#">Reforço Escolar</a></li><li><a href="#">Relatório de acompanhamento</a></li> <li><a href="#">Sessões com Psicopedagoga</a></li> <li><a href="#">Aulas Online</a></li> </ul> </div> <div class="footer-section"> <h4>Disciplinas</h4> <ul class="footer-links"> <li><a href="#">Matemática</a></li> <li><a href="#">Física</a></li> <li><a href="#">Química</a></li> <li><a href="#">Portugês</a></li> <li><a href="#">Geografia</a></li> <li><a href="#">História</a></li> <li><a href="#">Biologia</a></li> <li><a href="#">Inglês</a></li> <li><a href="#">Espanhol</a></li> <li><a href="#">Filosofia</a></li> </ul> </div> <div class="footer-section"> <h4>Contato</h4> <div class="contact-info"> <div class="contact-item"> <i class="fas fa-phone"></i> <span>(75) 999271695</span> </div> <div class="contact-item"> <i class="fas fa-envelope"></i> <span>contato@saberclick.com.br</span> </div> <div class="contact-item"> <i class="fas fa-map-marker-alt"></i> <span>Salvador, BA - Brasil</span> </div> </div> </div> </div> <div class="footer-bottom"> <div class="footer-bottom-content"> <p>&copy; 2025 Click do Saber. Todos os direitos reservados.</p> <div class="footer-bottom-links"> <a href="#">Política de Privacidade</a> <a href="#">Termos de Uso</a> <a href="#">Cookies</a> </div> </div> </div> </div> </footer>
+        <div class="bg-white rounded-3xl p-8 shadow-xl text-center">
+            <p class="font-bold text-primary mb-2">+35 famílias acompanhadas</p>
+            <p class="text-gray-600 text-sm">
+                94% relatam melhora no desempenho escolar nos primeiros 30 dias.
+            </p>
+        </div>
 
-    <script>
-        // ===== MENU HAMBURGUER SIMPLES (Nova Implementação) =====
-        document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    const body = document.body;
+    </div>
+</section>
 
-    // Verificar se os elementos existem
-    if (!hamburger || !navMenu) {
-        console.error('Elementos do menu não encontrados');
-        return;
-    }
+<!-- VIDEO -->
+<section class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-extrabold text-dark mb-4">
+            Como funciona na prática
+        </h2>
+        <p class="text-gray-600 mb-10">
+            Assista antes de falar com a gente.<br>
+            Em menos de 2 minutos você vai entender se isso é para seu filho.
+        </p>
 
-    // Função para fechar o menu
-    function closeMenu() {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        body.classList.remove('menu-open');
-    }
+        <div class="aspect-video bg-black rounded-3xl overflow-hidden shadow-xl">
+            <video controls class="w-full h-full">
+                <source src="videosite.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+            </video>
+        </div>
 
-    // Função para abrir/fechar menu
-    function toggleMenu() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        body.classList.toggle('menu-open');
-    }
+        <a href="https://wa.me/5575999271695"
+           class="mt-10 inline-block bg-secondary text-white px-12 py-5 rounded-full text-lg font-extrabold shadow hover:scale-105 transition">
+            Falar com um especialista agora
+        </a>
+    </div>
+</section>
 
-    // Evento no hamburger
-    hamburger.addEventListener('click', toggleMenu);
+<!-- PROVA SOCIAL -->
+<section class="bg-light py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-extrabold text-dark mb-10">
+            O que os pais dizem
+        </h2>
 
-    // Evento nos links do menu
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-    });
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow">
+                <p class="italic text-gray-600">
+                    “Hoje sei exatamente onde meu filho tem dificuldade.
+                    Não fico mais no escuro.”
+                </p>
+                <p class="mt-4 font-bold text-primary">— Mãe do João, 9 anos</p>
+            </div>
 
-    // Evento no resize da janela
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-            closeMenu();
-        }
-    });
+            <div class="bg-white p-6 rounded-2xl shadow">
+                <p class="italic text-gray-600">
+                    “Não é só aula. É acompanhamento de verdade.”
+                </p>
+                <p class="mt-4 font-bold text-primary">— Pai da Laura, 11 anos</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    // Opcional: fechar menu ao clicar fora
-    document.addEventListener('click', (event) => {
-        const isClickInsideMenu = navMenu.contains(event.target);
-        const isClickOnHamburger = hamburger.contains(event.target);
-        
-        if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
-            closeMenu();
-        }
-    });
-});
+<!-- CTA FINAL -->
+<footer class="bg-dark text-white py-20 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">
+        Cada aluno aprende no seu tempo.<br>
+        Seu filho não está errado. Ele só aprende diferente.
+    </h2>
 
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                body.classList.remove('menu-open'); // Remove a classe no body ao redimensionar para desktop
-            }
-        });
+    <a href="https://wa.me/5575999271695"
+       class="inline-block bg-secondary text-white px-12 py-5 rounded-full text-xl font-extrabold shadow hover:scale-105 transition">
+        Conversar agora
+    </a>
 
-        // ===== PROFESSORES OVERLAY =====
-        const professorCards = document.querySelectorAll('.professor-card');
-        professorCards.forEach(card => {
-            card.addEventListener('click', e => {
-                e.stopPropagation();
-                professorCards.forEach(c => c !== card && c.classList.remove('tapped'));
-                card.classList.toggle('tapped');
-            });
-        });
+    <p class="mt-10 text-xs text-gray-400 uppercase tracking-widest">
+        © 2026 Click do Saber
+    </p>
+</footer>
 
-        document.addEventListener('click', () => {
-            professorCards.forEach(card => card.classList.remove('tapped'));
-        });
-
-        // ===== ANIMAÇÕES DE SCROLL =====
-        document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.animate-on-scroll');
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.transitionDelay = `${index * 0.1}s`;
-                        entry.target.classList.add('animated');
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15 });
-
-            animatedElements.forEach(el => observer.observe(el));
-        });
-
-        // ===== SMOOTH SCROLL + LINK ATIVO =====
-        const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
-        navLinks.forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        // ===== HEADER INTELIGENTE =====
-        const header = document.getElementById('header');
-        let lastScrollY = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY > 80) {
-                header.classList.add('scrolled');
-                if (currentScrollY > lastScrollY && currentScrollY > 300) {
-                    header.classList.add('hidden');
-                } else {
-                    header.classList.remove('hidden');
-                }
-            } else {
-                header.classList.remove('scrolled', 'hidden');
-            }
-
-            lastScrollY = currentScrollY;
-        });
-
-        // ===== BANNER ROTATIVO (Atualizado para suportar imagens mobile) =====
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = Array.from(document.querySelectorAll(".hero-image"));
-
-  function isVisible(el) {
-    return getComputedStyle(el).display !== 'none';
-  }
-
-  function findInitialIndex() {
-    // tenta encontrar um slide marcado como active e visível
-    for (let i = 0; i < slides.length; i++) {
-      if (slides[i].classList.contains("active") && isVisible(slides[i])) return i;
-    }
-    // senão, retorna o primeiro visível
-    for (let i = 0; i < slides.length; i++) {
-      if (isVisible(slides[i])) return i;
-    }
-    return 0;
-  }
-
-  let currentSlide = findInitialIndex();
-
-  // garante que apenas o slide atual esteja com a classe active
-  slides.forEach((s, idx) => {
-    if (idx === currentSlide) s.classList.add("active");
-    else s.classList.remove("active");
-  });
-
-  function showNextSlide() {
-    // remove active do atual
-    slides[currentSlide].classList.remove("active");
-    // encontra o próximo slide visível
-    let next = currentSlide;
-    do {
-      next = (next + 1) % slides.length;
-    } while (!isVisible(slides[next]) && next !== currentSlide);
-    currentSlide = next;
-    slides[currentSlide].classList.add("active");
-  }
-
-  setInterval(showNextSlide, 5000); // muda a cada 5 segundos
-
-  // reavalia visibilidade ao redimensionar (garante slide ativo válido)
-  window.addEventListener('resize', () => {
-    currentSlide = findInitialIndex();
-    slides.forEach((s, idx) => {
-      if (idx === currentSlide) s.classList.add("active");
-      else s.classList.remove("active");
-    });
-  });
-});
-
-    // Ajusta dinamicamente a margin-top da .hero para colar o banner na base do header no mobile
-    (function() {
-      function adjustHeroBelowHeader() {
-        const header = document.getElementById('header');
-        const hero = document.querySelector('.hero');
-        if (!header || !hero) return;
-
-        const apply = () => {
-          if (window.innerWidth <= 768) {
-            // usa a altura real do header (inclui padding/linha/altura do logo)
-            hero.style.marginTop = header.getBoundingClientRect().height + 'px';
-          } else {
-            hero.style.marginTop = '0';
-          }
-        };
-
-        // ajustar ao carregar e ao redimensionar
-        apply();
-        window.addEventListener('resize', apply);
-
-        // opcional: observar mudanças na altura do header (ex: quando menu abre)
-        const ro = new ResizeObserver(apply);
-        ro.observe(header);
-      }
-
-      // Executa após DOM pronto
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', adjustHeroBelowHeader);
-      } else {
-        adjustHeroBelowHeader();
-      }
-    })();
-    </script>
 </body>
 </html>
