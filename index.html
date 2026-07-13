@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <title>Click do Saber | Acompanhamento Escolar Online</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Click do Saber identifica exatamente onde o aluno trava, acompanha de perto com professores especialistas e mostra aos pais como ajudar — com dados reais, não achismos.">
+
+    <link rel="icon" href="ISOTIPO-2.png" type="image/png">
+    <link rel="shortcut icon" href="ISOTIPO-2.png" type="image/png">
+    <link rel="apple-touch-icon" href="ISOTIPO-2.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
     <style>
@@ -58,7 +66,10 @@
         .tag.white { background: rgba(255,255,255,.15); color: #fff; }
         .tag.green { background: rgba(0,200,168,.15); color: var(--secondary); }
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             font-family: 'Sora', sans-serif;
             font-weight: 700;
             border-radius: 99px;
@@ -243,6 +254,7 @@
         .dor-icon {
             width: 52px; height: 52px;
             background: var(--primary-light);
+            color: var(--primary);
             border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
             font-size: 24px;
@@ -287,6 +299,9 @@
             font-weight: 700;
             padding: 4px 12px;
             border-radius: 99px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
         .servico-icon {
             width: 56px; height: 56px;
@@ -355,7 +370,8 @@
             transition: all .2s;
         }
         .disc-card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(111,79,227,.12); }
-        .disc-emoji { font-size: 32px; margin-bottom: 10px; }
+        .disc-emoji { font-size: 30px; margin-bottom: 12px; color: var(--primary); transition: color .2s; }
+        .disc-card:hover .disc-emoji { color: var(--secondary-dark); }
         .disc-card h4 { font-size: 14px; font-weight: 600; color: var(--dark); }
         .disc-note {
             background: #fff;
@@ -375,6 +391,7 @@
         .feat-icon {
             width: 48px; height: 48px;
             background: var(--primary-light);
+            color: var(--primary);
             border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
             font-size: 22px;
@@ -410,7 +427,7 @@
             padding: 12px 16px;
             margin-bottom: 20px;
         }
-        .mock-header-title { font-family: 'Sora',sans-serif; font-size: 14px; font-weight: 700; color: #fff; }
+        .mock-header-title { font-family: 'Sora',sans-serif; font-size: 14px; font-weight: 700; color: #fff; display: inline-flex; align-items: center; gap: 8px; }
         .mock-dots { display: flex; gap: 6px; }
         .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
         .mock-bar { height: 10px; border-radius: 99px; margin-bottom: 10px; background: rgba(255,255,255,.15); overflow: hidden; }
@@ -646,10 +663,60 @@
         .delay-3 { transition-delay: .3s; }
         .delay-4 { transition-delay: .4s; }
         .delay-5 { transition-delay: .5s; }
+
+        /* ── ICON SYSTEM ── */
+        .icon {
+            width: 1em;
+            height: 1em;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.7;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+        .icon-fill { fill: currentColor; stroke: none; }
+        .btn .icon, .badge-icon { width: 1.05em; height: 1.05em; margin-right: 2px; }
     </style>
 </head>
 
 <body>
+
+<!-- ── SVG ICON SPRITE ── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+        <symbol id="i-grad-cap" viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.2V16c0 1.66 2.69 3 6 3s6-1.34 6-3v-5.8"/><path d="M22 8v6"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.28 0-2.49-.29-3.57-.8L3 21l1.8-4.93A8.5 8.5 0 1 1 21 11.5Z"/></symbol>
+        <symbol id="i-trend-down" viewBox="0 0 24 24"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></symbol>
+        <symbol id="i-pulse" viewBox="0 0 24 24"><polyline points="2 12 7 12 9 6 13 18 15 12 22 12"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></symbol>
+        <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7.5" x2="12" y2="13.2"/><circle class="icon-fill" cx="12" cy="16.6" r="0.9"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.2" cy="9" r="2.4"/><path d="M15.8 14c2.5.4 4.2 2.6 4.2 6"/></symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 22 8 12 14 2 8 12 2"/><polyline points="2 12.5 12 18.5 22 12.5"/><polyline points="2 16.5 12 22.5 22 16.5"/></symbol>
+        <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.2"/><circle class="icon-fill" cx="12" cy="12" r="1.4"/></symbol>
+        <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon class="icon-fill" points="10 8.2 16.2 12 10 15.8 10 8.2"/></symbol>
+        <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon class="icon-fill" points="15 9 13 13 9 15 11 11 15 9"/></symbol>
+        <symbol id="i-bar-chart" viewBox="0 0 24 24"><line x1="4" y1="20.5" x2="20" y2="20.5"/><rect x="6" y="12" width="3" height="8"/><rect x="10.5" y="7" width="3" height="13"/><rect x="15" y="10" width="3" height="10"/></symbol>
+        <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><polyline points="8.5 13 11 15.5 16 10"/></symbol>
+        <symbol id="i-life-buoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><line x1="5.3" y1="5.3" x2="9.2" y2="9.2"/><line x1="14.8" y1="14.8" x2="18.7" y2="18.7"/><line x1="18.7" y1="5.3" x2="14.8" y2="9.2"/><line x1="9.2" y1="14.8" x2="5.3" y2="18.7"/></symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></symbol>
+        <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 10a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+        <symbol id="i-plus-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7.5" x2="12" y2="16.5"/><line x1="7.5" y1="12" x2="16.5" y2="12"/></symbol>
+        <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.5 3h5"/><path d="M10.3 3v6.3l-5.4 9A2 2 0 0 0 6.6 21h10.8a2 2 0 0 0 1.7-3l-5.4-9.2V3"/></symbol>
+        <symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 5.2c-1.6-1.3-4.1-2-7-2v14c2.9 0 5.4.7 7 2 1.6-1.3 4.1-2 7-2v-14c-2.9 0-5.4.7-7 2Z"/><line x1="12" y1="5.2" x2="12" y2="19.2"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c2.6 2.4 2.6 15.6 0 18"/><path d="M12 3c-2.6 2.4-2.6 15.6 0 18"/></symbol>
+        <symbol id="i-landmark" viewBox="0 0 24 24"><polygon points="12 3 21 9 3 9 12 3"/><line x1="5" y1="10" x2="5" y2="20"/><line x1="9.5" y1="10" x2="9.5" y2="20"/><line x1="14.5" y1="10" x2="14.5" y2="20"/><line x1="19" y1="10" x2="19" y2="20"/><line x1="3" y1="21" x2="21" y2="21"/></symbol>
+        <symbol id="i-atom" viewBox="0 0 24 24"><circle class="icon-fill" cx="12" cy="12" r="1.4"/><ellipse cx="12" cy="12" rx="9" ry="4"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(120 12 12)"/></symbol>
+        <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 4 14 11 14 10 22 20 10 13 10 13 2"/></symbol>
+        <symbol id="i-flag" viewBox="0 0 24 24"><line x1="5" y1="3" x2="5" y2="21"/><path d="M5 4.2h11l-2.6 4L16 12H5"/></symbol>
+        <symbol id="i-dna" viewBox="0 0 24 24"><path d="M7 3c0 6.5 10 6.5 10 13"/><path d="M17 21c0-6.5-10-6.5-10-13"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="18" x2="16" y2="18"/></symbol>
+        <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20.2 5 16 15.8 5.2l3 3L8 19l-4 1.2Z"/><line x1="14" y1="7" x2="17" y2="10"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><polygon class="icon-fill" points="12 2.5 14.9 9 22 9.7 16.7 14.5 18.3 21.5 12 17.7 5.7 21.5 7.3 14.5 2 9.7 9.1 9 12 2.5"/></symbol>
+        <symbol id="i-facebook" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path class="icon-fill" d="M14 8.2h-1.4a1.3 1.3 0 0 0-1.3 1.3V11h2.7l-.35 2.7H11.3V19h-2.7v-5.3H6.9V11h1.7V9.1A3 3 0 0 1 11.7 6H14Z"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="icon-fill" cx="17.2" cy="6.8" r="1"/></symbol>
+    </defs>
+</svg>
 
 <!-- ── HEADER ── -->
 <header>
@@ -668,7 +735,7 @@
             <div class="header-cta">
                 <a href="https://wa.me/5575999271695?text=Quero%20conhecer%20melhor%20o%20acompanhamento%20da%20Click"
                    class="btn btn-secondary">
-                    💬 Falar no WhatsApp
+                    <svg class="icon"><use href="#i-chat"/></svg> Falar no WhatsApp
                 </a>
             </div>
 
@@ -685,7 +752,7 @@
         <div class="hero-inner">
             <div>
                 <div class="hero-badge">
-                    🎓 Acompanhamento Escolar Online
+                    <svg class="icon"><use href="#i-grad-cap"/></svg> Acompanhamento Escolar Online
                 </div>
 
                 <h1>
@@ -772,32 +839,32 @@
 
         <div class="dores-grid">
             <div class="dor-card fade-up delay-1">
-                <div class="dor-icon">📉</div>
+                <div class="dor-icon"><svg class="icon"><use href="#i-trend-down"/></svg></div>
                 <h3>Queda brusca de notas</h3>
                 <p>O boletim piorou mas ninguém sabe explicar o porquê. Identificamos a lacuna exata de conteúdo.</p>
             </div>
             <div class="dor-card fade-up delay-2">
-                <div class="dor-icon">🧠</div>
+                <div class="dor-icon"><svg class="icon"><use href="#i-pulse"/></svg></div>
                 <h3>TEA, TDAH e dificuldades de aprendizagem</h3>
                 <p>Alunos neuroatípicos precisam de abordagem pedagógica especializada — não de mais pressão.</p>
             </div>
             <div class="dor-card fade-up delay-3">
-                <div class="dor-icon">😴</div>
+                <div class="dor-icon"><svg class="icon"><use href="#i-moon"/></svg></div>
                 <h3>Desmotivação e falta de foco</h3>
                 <p>A criança perdeu o interesse em estudar. Trabalhamos a autonomia e o prazer de aprender.</p>
             </div>
             <div class="dor-card fade-up delay-1">
-                <div class="dor-icon">😟</div>
+                <div class="dor-icon"><svg class="icon"><use href="#i-alert"/></svg></div>
                 <h3>Ansiedade e bloqueio em provas</h3>
                 <p>O aluno sabe a matéria mas trava na hora da avaliação. Desenvolvemos estratégias de confiança.</p>
             </div>
             <div class="dor-card fade-up delay-2">
-                <div class="dor-icon">👨‍👩‍👧</div>
+                <div class="dor-icon"><svg class="icon"><use href="#i-users"/></svg></div>
                 <h3>Pais sem tempo ou sem ferramentas</h3>
                 <p>Você quer ajudar, mas não sabe como. Entregamos um painel claro para que os pais possam agir.</p>
             </div>
             <div class="dor-card fade-up delay-3">
-                <div class="dor-icon">📚</div>
+                <div class="dor-icon"><svg class="icon"><use href="#i-layers"/></svg></div>
                 <h3>Lacunas acumuladas de anos anteriores</h3>
                 <p>Quando o aluno não aprendeu as bases, tudo se torna difícil. Regressamos ao ponto exato da dúvida.</p>
             </div>
@@ -816,7 +883,7 @@
 
         <div class="servicos-grid">
             <div class="servico-card fade-up delay-1">
-                <div class="servico-icon" style="background:rgba(111,79,227,.2);">🎯</div>
+                <div class="servico-icon" style="background:rgba(111,79,227,.2);color:var(--primary);"><svg class="icon"><use href="#i-target"/></svg></div>
                 <h3>Plataforma de Questões Click</h3>
                 <p>Banco de questões organizadas por disciplina, conteúdo e nível de dificuldade — com relatórios automáticos de desempenho.</p>
                 <ul class="servico-features">
@@ -827,8 +894,8 @@
             </div>
 
             <div class="servico-card featured fade-up delay-2">
-                <span class="servico-badge">⭐ Principal</span>
-                <div class="servico-icon" style="background:rgba(0,200,168,.2);">📹</div>
+                <span class="servico-badge"><svg class="icon"><use href="#i-star"/></svg> Principal</span>
+                <div class="servico-icon" style="background:rgba(0,200,168,.2);color:var(--secondary-dark);"><svg class="icon"><use href="#i-play"/></svg></div>
                 <h3>Aulas ao Vivo com Professor</h3>
                 <p>O aluno escolhe a disciplina, o professor é especialista naquele conteúdo. Sessões ao vivo, interativas e gravadas para revisão.</p>
                 <ul class="servico-features">
@@ -840,7 +907,7 @@
             </div>
 
             <div class="servico-card fade-up delay-3">
-                <div class="servico-icon" style="background:rgba(255,193,7,.15);">🧭</div>
+                <div class="servico-icon" style="background:rgba(255,193,7,.15);color:#b8860b;"><svg class="icon"><use href="#i-compass"/></svg></div>
                 <h3>Mentoria de Autonomia</h3>
                 <p>Desenvolvemos hábitos de estudo, organização e autoconhecimento para que o aluno evolua cada vez mais de forma independente.</p>
                 <ul class="servico-features">
@@ -851,7 +918,7 @@
             </div>
 
             <div class="servico-card fade-up delay-1">
-                <div class="servico-icon" style="background:rgba(111,79,227,.2);">📊</div>
+                <div class="servico-icon" style="background:rgba(111,79,227,.2);color:var(--primary);"><svg class="icon"><use href="#i-bar-chart"/></svg></div>
                 <h3>Dashboard de Atividades Semanais</h3>
                 <p>Os pais acompanham tudo em tempo real: atividades realizadas, desempenho por disciplina, evolução e próximos passos.</p>
                 <ul class="servico-features">
@@ -862,7 +929,7 @@
             </div>
 
             <div class="servico-card fade-up delay-2">
-                <div class="servico-icon" style="background:rgba(0,200,168,.2);">📋</div>
+                <div class="servico-icon" style="background:rgba(0,200,168,.2);color:var(--secondary-dark);"><svg class="icon"><use href="#i-clipboard"/></svg></div>
                 <h3>Relatórios de Desempenho</h3>
                 <p>Relatórios detalhados por conteúdo, identificando exatamente onde o aluno precisa de mais atenção — com linguagem clara para os pais.</p>
                 <ul class="servico-features">
@@ -873,7 +940,7 @@
             </div>
 
             <div class="servico-card fade-up delay-3">
-                <div class="servico-icon" style="background:rgba(255,82,82,.15);">🤝</div>
+                <div class="servico-icon" style="background:rgba(255,82,82,.15);color:var(--red);"><svg class="icon"><use href="#i-life-buoy"/></svg></div>
                 <h3>Suporte para Famílias</h3>
                 <p>Os pais também são orientados. Realizamos alinhamentos periódicos para que em casa o ambiente reforce o aprendizado.</p>
                 <ul class="servico-features">
@@ -956,43 +1023,43 @@
 
         <div class="disc-grid fade-up">
             <div class="disc-card">
-                <div class="disc-emoji">➕</div>
+                <div class="disc-emoji"><svg class="icon"><use href="#i-plus-circle"/></svg></div>
                 <h4>Matemática</h4>
             </div>
             <div class="disc-card">
-                <div class="disc-emoji">🔬</div>
+                <div class="disc-emoji"><svg class="icon"><use href="#i-flask"/></svg></div>
                 <h4>Ciências</h4>
             </div>
             <div class="disc-card">
-                <div class="disc-emoji">📖</div>
+                <div class="disc-emoji"><svg class="icon"><use href="#i-book-open"/></svg></div>
                 <h4>Português</h4>
             </div>
             <div class="disc-card">
-                <div class="disc-emoji">🌍</div>
+                <div class="disc-emoji"><svg class="icon"><use href="#i-globe"/></svg></div>
                 <h4>Geografia</h4>
             </div>
             <div class="disc-card">
-                <div class="disc-emoji">📜</div>
+                <div class="disc-emoji"><svg class="icon"><use href="#i-landmark"/></svg></div>
                 <h4>História</h4>
             </div>
             <div class="disc-card">
-                <div class="disc-emoji">🧪</div>
+                <div class="disc-emoji"><svg class="icon"><use href="#i-atom"/></svg></div>
                 <h4>Química</h4>
             </div>
             <div class="disc-card">
-                <div class="disc-emoji">⚡</div>
+                <div class="disc-emoji"><svg class="icon"><use href="#i-zap"/></svg></div>
                 <h4>Física</h4>
             </div>
             <div class="disc-card">
-                <div class="disc-emoji">🇬🇧</div>
+                <div class="disc-emoji"><svg class="icon"><use href="#i-flag"/></svg></div>
                 <h4>Inglês</h4>
             </div>
             <div class="disc-card">
-                <div class="disc-emoji">🧬</div>
+                <div class="disc-emoji"><svg class="icon"><use href="#i-dna"/></svg></div>
                 <h4>Biologia</h4>
             </div>
             <div class="disc-card">
-                <div class="disc-emoji">📐</div>
+                <div class="disc-emoji"><svg class="icon"><use href="#i-pen"/></svg></div>
                 <h4>Redação</h4>
             </div>
         </div>
@@ -1020,28 +1087,28 @@
 
                 <div class="platform-features">
                     <div class="feat-item fade-up delay-1">
-                        <div class="feat-icon">📊</div>
+                        <div class="feat-icon"><svg class="icon"><use href="#i-bar-chart"/></svg></div>
                         <div class="feat-content">
                             <h4>Relatórios por conteúdo</h4>
                             <p>Veja exatamente em quais temas o seu filho vai bem e onde precisa reforçar — com dados reais.</p>
                         </div>
                     </div>
                     <div class="feat-item fade-up delay-2">
-                        <div class="feat-icon">📅</div>
+                        <div class="feat-icon"><svg class="icon"><use href="#i-calendar"/></svg></div>
                         <div class="feat-content">
                             <h4>Dashboard de atividades semanais</h4>
                             <p>Acompanhe em tempo real tudo que foi feito, o que está pendente e os próximos passos.</p>
                         </div>
                     </div>
                     <div class="feat-item fade-up delay-3">
-                        <div class="feat-icon">🎯</div>
+                        <div class="feat-icon"><svg class="icon"><use href="#i-target"/></svg></div>
                         <div class="feat-content">
                             <h4>Banco de questões inteligente</h4>
                             <p>Questões organizadas por disciplina e nível, com feedback automático e análise de padrões de erro.</p>
                         </div>
                     </div>
                     <div class="feat-item fade-up delay-4">
-                        <div class="feat-icon">🔔</div>
+                        <div class="feat-icon"><svg class="icon"><use href="#i-bell"/></svg></div>
                         <div class="feat-content">
                             <h4>Alertas e comunicação direta</h4>
                             <p>Os pais recebem alertas e podem se comunicar diretamente com a equipe pedagógica.</p>
@@ -1052,7 +1119,7 @@
 
             <div class="platform-visual fade-up delay-2">
                 <div class="mock-header">
-                    <span class="mock-header-title">📊 Desempenho — Semana 3</span>
+                    <span class="mock-header-title"><svg class="icon"><use href="#i-bar-chart"/></svg> Desempenho — Semana 3</span>
                     <div class="mock-dots">
                         <div class="mock-dot" style="background:#ff5f57"></div>
                         <div class="mock-dot" style="background:#febc2e"></div>
@@ -1221,7 +1288,7 @@
             <p>Fale com a gente hoje e descubra como a Click pode transformar a relação do seu filho com a escola.</p>
             <a href="https://wa.me/5575999271695?text=Quero%20conhecer%20melhor%20o%20acompanhamento%20da%20Click"
                class="btn btn-white">
-                💬 Conversar agora — é gratuito
+                <svg class="icon"><use href="#i-chat"/></svg> Conversar agora — é gratuito
             </a>
         </div>
     </div>
@@ -1328,9 +1395,9 @@
                 <img src="ISOTIPO-2.png" class="footer-logo" alt="Click do Saber">
                 <p>Acompanhamento escolar online com método, tecnologia e professores especialistas. Seu filho merece mais do que uma nota — merece entender.</p>
                 <div class="footer-social">
-                    <a href="#" class="social-btn">📘</a>
-                    <a href="#" class="social-btn">📸</a>
-                    <a href="https://wa.me/5575999271695" class="social-btn">💬</a>
+                    <a href="#" class="social-btn" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a>
+                    <a href="#" class="social-btn" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+                    <a href="https://wa.me/5575999271695" class="social-btn" aria-label="WhatsApp"><svg class="icon"><use href="#i-chat"/></svg></a>
                 </div>
             </div>
 
